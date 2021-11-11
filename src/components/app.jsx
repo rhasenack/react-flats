@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import Flat from './flat';
+import FlatList from './flat_list';
 import Map from './map'
 import flats from '../data/flats';
 
 
 class App extends Component {
+
   constructor (props) {
     super(props);
 
     this.state = {
       flatList: flats,
-      center: {
+      mapDefaultCenter: {
         lat: 10.99835602,
         lng: 77.01502627
       }
@@ -31,22 +32,15 @@ class App extends Component {
       <div className="flex">
         <div className="left">
           <div className="row">
-            {this.state.flatList.map((flat) => {
-              return (
-                <div className="col-lg-6">
-                  <Flat flatInfo={flat} key={flat.name} mapFunction={this.redefineCenter} />
-                </div>
-              );
-            })
-            }
+            <FlatList flatList={ this.state.flatList } />
           </div>
         </div>
         <div className="right">
-          <Map center={ this.state.center }/>
+          <Map center={ this.state.mapDefaultCenter }/>
         </div>
       </div>
-      );
+    );
   }
 }
 
- export default App;
+export default App;

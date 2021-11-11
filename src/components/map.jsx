@@ -20,7 +20,8 @@ class Map extends Component {
           yesIWantToUseGoogleMapApiInternals
         >
           <Marker lat={this.props.center.lat}
-            lng={this.props.center.lng} />
+            lng={this.props.center.lng}
+          />
         </GoogleMapReact>
       </div>
     );
