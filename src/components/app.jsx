@@ -11,7 +11,7 @@ class App extends Component {
 
     this.state = {
       flatList: flats,
-      mapDefaultCenter: {
+      center: {
         lat: 10.99835602,
         lng: 77.01502627
       }
@@ -32,11 +32,11 @@ class App extends Component {
       <div className="flex">
         <div className="left">
           <div className="row">
-            <FlatList flatList={ this.state.flatList } />
+            <FlatList flatList={this.state.flatList} mapFunction={this.redefineCenter} />
           </div>
         </div>
         <div className="right">
-          <Map center={ this.state.mapDefaultCenter }/>
+          <Map center={ this.state.center }/>
         </div>
       </div>
     );

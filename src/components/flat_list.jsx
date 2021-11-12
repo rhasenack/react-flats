@@ -7,11 +7,11 @@ class FlatList extends Component {
   render() {
     return (
       this.props.flatList.map((flat) => {
-            return (
-              <div className="col-lg-6">
-                <Flat flatInfo={flat} key={flat.name} mapFunction={this.redefineCenter} />
-              </div>
-        )
+        return (
+          <div className="col-lg-6">
+            <Flat flatInfo={flat} key={flat.name} mapFunction={this.props.mapFunction} />
+          </div>
+        );
       })
     );
   }

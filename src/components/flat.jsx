@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 
 class Flat extends Component {
-
   changeMapOnClick = () => {
     this.props.mapFunction(this.props.flatInfo.lat, this.props.flatInfo.lng)
   }
